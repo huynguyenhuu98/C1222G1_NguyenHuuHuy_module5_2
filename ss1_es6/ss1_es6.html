@@ -59,8 +59,8 @@
     let listPost2 = listAdded.map(post => (`${post.id} - ${post.title} - ${post.rating}`));
     console.log(listPost2);
     // Yêu cầu 3
-    let mergeCourses = [...courses, ...addedCourses];
-    console.log(mergeCourses);
+    let mergeArray = (array1, array2) => [...array1, ...array2];
+    console.log(mergeArray(courses,addedCourses));
 </script>
 </body>
 </html>
