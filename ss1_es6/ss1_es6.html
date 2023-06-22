@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    let courses = [
+    const courses = [
         {
             id: 1,
             title: "ReactJS Tutorial",
@@ -50,7 +50,6 @@
             rating: 3.8,
         }
     ];
-
     // Yêu cầu 1
     let listPost1 = courses.filter(post => (post.rating >=4));
     console.log(listPost1);
