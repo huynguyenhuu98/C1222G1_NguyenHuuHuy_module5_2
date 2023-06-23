@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 export function ListPost() {
     const [post, setPost] = useState([])
-    const [idDelete, setIdDelete] = useState("")
+    const [idDelete, setIdDelete] = useState()
     const [nameDelete, setNameDelete] = useState("")
     const findAll = async () => {
         const value = await servicePost.findPost()

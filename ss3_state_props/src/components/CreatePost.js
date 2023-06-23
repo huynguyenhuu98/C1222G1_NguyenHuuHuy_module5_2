@@ -8,19 +8,30 @@ export function CreatePost() {
     const navigate = useNavigate()
     return (
         <>
-            <Formik initialValues={{title: '', category: '', updatedAt: new Date()}}
-                    validationSchema={Yup.object({
-                        title: Yup.string().required("required"),
-                        category: Yup.string().required("required"),
-                        updatedAt: Yup.string().required("required")
-                    })}
-                    onSubmit={values => {
-                        const create = async () => {
-                            await servicePost.addPost(values)
-                            navigate('/')
-                        }
-                        create()
-                    }}>
+            <Formik
+                initialValues={{
+                    title: '',
+                    category: '',
+                    updatedAt: new Date()
+                }}
+
+
+                validationSchema={Yup.object({
+                    title: Yup.string().required("required"),
+                    category: Yup.string().required("required"),
+                    updatedAt: Yup.string().required("required")
+                })}
+
+
+                onSubmit={values => {
+                    const create = async () => {
+                        await servicePost.addPost(values)
+                        navigate('/')
+                    }
+                    create()
+
+                }}
+            >
                 <Form>
                     <div>
                         <label htmlFor="title">TITLE</label>

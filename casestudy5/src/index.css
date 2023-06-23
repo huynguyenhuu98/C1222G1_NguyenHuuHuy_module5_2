@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  background-image: url("https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg");
+  background-position: right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.vc_custom {
+  margin-top: -100px;
+  background-image: url(https://furamavietnam.com/wp-content/uploads/2018/08/banner01.jpg?id=1433);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

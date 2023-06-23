@@ -9,12 +9,13 @@ export function UpdatePost() {
     const param = useParams()
     const [post, setPost] = useState(null)
     const findById = async () => {
-        const res = await servicePost.findId(param.id)
+        const res = await servicePost.findById(param.id)
         setPost(res)
     }
     useEffect(() => {
         findById()
-    }, [param.id])
+    }, [param.id]);
+
     if (!post) {
         return null
     }

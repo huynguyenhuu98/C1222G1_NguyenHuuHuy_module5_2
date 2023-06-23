@@ -1,0 +1,68 @@
+{
+  "customer": [
+    {
+      "id": "1",
+      "name": "Nguyễn Văn A",
+      "birth": "20-05-1995",
+      "phone": "0835443443",
+      "address": "Ngũ Hành Sơn - Đà Nẵng",
+      "email": "nguyena@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Nguyễn Thị B",
+      "birth": "10-05-1990",
+      "phone": "0929862826",
+      "address": "Quảng Nam",
+      "email": "nguyenthib@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Nguyễn Thị C",
+      "birth": "10-05-1990",
+      "phone": "0929862826",
+      "address": "Quảng Nam",
+      "email": "nguyenthib@gmail.com"
+    },
+    {
+      "id": "4",
+      "name": "Nguyễn Thị D",
+      "birth": "10-05-1990",
+      "phone": "0929862826",
+      "address": "Quảng Nam",
+      "email": "nguyenthib@gmail.com"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "title": "PHÒNG SUITE HƯỚNG BIỂN",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg",
+      "area": "85.8"
+    },
+    {
+      "id": 2,
+      "title": "PHÒNG STUDIO SUITE HƯỚNG BIỂN",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
+      "area": "40.1"
+    },
+    {
+      "id": 4,
+      "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "area": "43.7"
+    },
+    {
+      "id": 6,
+      "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "area": "43.7"
+    },
+    {
+      "id": 7,
+      "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "area": "43.7"
+    }
+  ]
+}
