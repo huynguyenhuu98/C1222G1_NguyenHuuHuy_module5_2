@@ -20,11 +20,11 @@ export function UpdatePost() {
     }
     return (
         <>
-            <Formik initialValues={{title: post?.title, category: post?.category, updatedAt: post?.updatedAt}}
+            <Formik initialValues={{title: post?.title, category: post?.category, updatedAt: new Date()}}
                     validationSchema={Yup.object({
                         title: Yup.string().required("required"),
                         category: Yup.string().required("required"),
-                        updatedAt: Yup.string().required("required"),
+                        updatedAt: Yup.string().required("required")
                     })}
                     onSubmit={values => {
                         const update = async () => {

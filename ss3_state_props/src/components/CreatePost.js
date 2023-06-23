@@ -8,7 +8,7 @@ export function CreatePost() {
     const navigate = useNavigate()
     return (
         <>
-            <Formik initialValues={{title: '', category: '', updatedAt: ''}}
+            <Formik initialValues={{title: '', category: '', updatedAt: new Date()}}
                     validationSchema={Yup.object({
                         title: Yup.string().required("required"),
                         category: Yup.string().required("required"),
