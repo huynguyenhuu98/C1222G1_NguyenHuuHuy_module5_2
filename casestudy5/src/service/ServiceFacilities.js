@@ -35,7 +35,7 @@ export const findById = async(id) =>{
         console.log(error)
     }
 }
-
+exp
 export const update = async(facility)=>{
     console.log("facilityupdate", facility)
     try {
