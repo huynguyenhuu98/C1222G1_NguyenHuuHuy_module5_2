@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 export function Header() {
     return (
@@ -30,12 +31,12 @@ export function Header() {
                                         Dịch vụ
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="#">Loại phòng</a></li>
-                                        <li><a className="dropdown-item" href="#">Khách hàng</a></li>
+                                        <li><a className="dropdown-item" ><NavLink to="/create" className="text-decoration-none btn btn-outline-light">Thêm mới dịch vụ</NavLink></a></li>
+                                        <li><a className="dropdown-item"><NavLink to="/customer" className="text-decoration-none btn btn-outline-light">Khách hàng</NavLink></a></li>
                                         <li>
                                             <hr className="dropdown-divider"/>
                                         </li>
-                                        <li><a className="dropdown-item" href="#">Hợp đồng</a></li>
+                                        <li><a className="dropdown-item"><NavLink to="/contract" className="text-decoration-none btn btn-outline-light">Hợp đồng</NavLink></a></li>
                                     </ul>
                                 </li>
                             </ul>

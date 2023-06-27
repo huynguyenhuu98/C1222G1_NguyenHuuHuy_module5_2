@@ -64,5 +64,31 @@
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "area": "43.7"
     }
+  ],
+  "contract": [
+    {
+      "id_contract": "1001",
+      "name": "Nguyễn Văn A",
+      "start": "20-05-2023",
+      "end": "24-05-2023",
+      "deposit": "1000000",
+      "total": "4000000"
+    },
+    {
+      "id_contract": "1002",
+      "name": "Nguyễn Văn B",
+      "start": "29-05-2023",
+      "end": "20-06-2023",
+      "deposit": "2000000",
+      "total": "9000000"
+    },
+    {
+      "id_contract": "1003",
+      "name": "Nguyễn Văn C",
+      "start": "10-05-2023",
+      "end": "15-05-2023",
+      "deposit": "1500000",
+      "total": "5000000"
+    }
   ]
 }
