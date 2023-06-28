@@ -31,12 +31,12 @@ export function Header() {
                                         Dịch vụ
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" ><NavLink to="/create" className="text-decoration-none btn btn-outline-light">Thêm mới dịch vụ</NavLink></a></li>
-                                        <li><a className="dropdown-item"><NavLink to="/customer" className="text-decoration-none btn btn-outline-light">Khách hàng</NavLink></a></li>
+                                        <li><a className="dropdown-item" ><NavLink to="/create" className="text-decoration-none ">Thêm mới dịch vụ</NavLink></a></li>
+                                        <li><a className="dropdown-item"><NavLink to="/customer" className="text-decoration-none ">Khách hàng</NavLink></a></li>
                                         <li>
                                             <hr className="dropdown-divider"/>
                                         </li>
-                                        <li><a className="dropdown-item"><NavLink to="/contract" className="text-decoration-none btn btn-outline-light">Hợp đồng</NavLink></a></li>
+                                        <li><a className="dropdown-item"><NavLink to="/contract" className="text-decoration-none ">Hợp đồng</NavLink></a></li>
                                     </ul>
                                 </li>
                             </ul>

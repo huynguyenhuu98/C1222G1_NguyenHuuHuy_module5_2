@@ -29,32 +29,80 @@
     {
       "id": 1,
       "title": "PHÒNG SUITE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg",
       "area": "85.8"
     },
     {
       "id": 2,
       "title": "PHÒNG STUDIO SUITE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
       "area": "40.1"
     },
     {
       "id": 4,
       "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "area": "43.7"
     },
     {
       "id": 6,
       "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "area": "43.7"
     },
     {
       "id": 7,
       "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
       "area": "43.7"
+    },
+    {
+      "title": "qwe",
+      "cost": 0,
+      "typeRent": "Tháng",
+      "service": "house",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
+      "area": 1,
+      "id": 8
+    },
+    {
+      "name": "asdas",
+      "phone": "123",
+      "address": "123",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "2023-06-18",
+      "id": 9
+    },
+    {
+      "name": "asd",
+      "phone": "asd",
+      "address": "asd",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "2023-06-01",
+      "id": 10
+    },
+    {
+      "name": "123",
+      "phone": "123",
+      "address": "123",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "2023-06-04",
+      "id": 11
     }
   ],
   "contract": [

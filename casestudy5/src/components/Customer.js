@@ -46,11 +46,8 @@ export function Customer() {
                     DANH SÁCH KHÁCH HÀNG</h2>
                 <div style={{height: '102px'}}></div>
             </div>
-            {/*<button type="button" className="btn btn-success"*/}
-            {/*        style={{marginBottom: "2%", marginLeft: "8%", backgroundColor: "#a5eee6"}}>*/}
-            {/*    <NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Chỉnh sửa khách hàng*/}
-            {/*    </NavLink>*/}
-            {/*</button>*/}
+            <NavLink to="/create-customer" className="bi bi-cart4 text-decoration-none"> Thêm khách hàng mới
+            </NavLink>
             <table className="table table-striped table-inverse table-responsive" style={{marginLeft: '1rem'}}>
                 <thead className="thead-inverse">
                 <tr>

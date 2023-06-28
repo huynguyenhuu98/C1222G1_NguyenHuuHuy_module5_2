@@ -10,7 +10,7 @@ export const findAll = async() =>{
 
 export const save = async(customer)=>{
     try {
-        await axios.post('http://localhost:8080/customer',{ ...customer })
+        await axios.post('http://localhost:8080/customer',customer)
     } catch (error) {
 
     }
