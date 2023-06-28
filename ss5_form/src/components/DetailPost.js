@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import * as servicePost from "../service/ServicePost"
 import {NavLink} from "react-router-dom";
 import {useParams} from "react-router";
-import {Field, Form, Formik} from "formik";
 
 export function DetailPost() {
     const param = useParams()
@@ -22,22 +21,22 @@ export function DetailPost() {
         <>
             <h2>Detail Post</h2>
             <NavLink to={'/'}>Home</NavLink>
-            <Formik initialValues={{title: post?.title, category: post?.category, updatedAt: post?.updatedAt}}>
-                <Form>
-                    <div>
-                        <label htmlFor='title'>Title</label>
-                        <Field id='title' name='title' disabled/>
-                    </div>
-                    <div>
-                        <label htmlFor='category'>Category</label>
-                        <Field id='category' name='category' disabled/>
-                    </div>
-                    <div>
-                        <label htmlFor='updatedAt'>T</label>
-                        <Field id='updatedAt' name='updatedAt' disabled/>
-                    </div>
-                </Form>
-            </Formik>
+            <table className="table-bordered">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{post.title}</td>
+                    <td>{post.category}</td>
+                    <td>{post.updatedAt}</td>
+                </tr>
+                </tbody>
+            </table>
         </>
     )
 }

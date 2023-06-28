@@ -4,9 +4,19 @@ import * as serviceCustomer from "../service/ServiceCustomer"
 
 export function Customer() {
     const [customers,setCustomer] = useState([])
+    const [idDelete,setIdDelete] = useState()
+    const [nameDelete,setNameDelete] = useState("")
     const findCustomer = async ()=>{
         const result = await serviceCustomer.findAll()
         setCustomer(result)
+    }
+    const propsDelete = async (id,name)=>{
+        setIdDelete(id)
+        setNameDelete(name)
+    }
+    const handleDelete = async (id) =>{
+        await serviceCustomer.remove(id)
+        findCustomer()
     }
     useEffect(()=>{
         findCustomer()
@@ -52,54 +62,27 @@ export function Customer() {
                     <th>E-mail</th>
                 </tr>
                 </thead>
-                <tbody>{
-                    customers.map((customer,))
+                <tbody>
+                {
+                    customers.map((customer,index)=>(
+                        <tr key={index}>
+                            <td>{index+1}</td>
+                            <td>{customer.name}</td>
+                            <td>{customer.birth}</td>
+                            <td>{customer.phone}</td>
+                            <td>{customer.address}</td>
+                            <td>{customer.email}</td>
+                            <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
+                            </NavLink></td>
+                            <td>
+                                <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" onClick={()=> propsDelete(customer.id,customer.name)}>
+                                    Xóa
+                                </button>
+                            </td>
+                        </tr>
+                    ))
                 }
-                <tr>
-                    <td scope="row">1</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>20-05-1995</td>
-                    <td>0835443443</td>
-                    <td>Ngũ Hành Sơn - Đà Nẵng</td>
-                    <td>nguyena@gmail.com</td>
-                    <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
-                    </NavLink></td>
-                    <td>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modelId">
-                            Xóa
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">2</td>
-                    <td>Nguyễn Thị B</td>
-                    <td>10-05-1990</td>
-                    <td>0929862826</td>
-                    <td>Quảng Nam</td>
-                    <td>nguyenthib@gmail.com</td>
-                    <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
-                    </NavLink></td>
-                    <td>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modelId">
-                            Xóa
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">3</td>
-                    <td>Nguyễn Khánh Đơn</td>
-                    <td>09-07-1992</td>
-                    <td>0911500914</td>
-                    <td>Hồ Chí Minh</td>
-                    <td>nguyendon@gmail.com</td>
-                    <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
-                    </NavLink></td>
-                    <td>
-                        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modelId">
-                            Xóa
-                        </button>
-                    </td>
-                </tr>
                 </tbody>
             </table>
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
@@ -110,11 +93,12 @@ export function Customer() {
                             <h1 className="modal-title fs-5" id="exampleModalLabel">Xoá khách hàng </h1>
                         </div>
                         <div className="modal-body">
-                            Bạn có muốn xoá khách hàng ?
+                            Bạn có muốn xoá <span style={{color:'red'}}>{nameDelete}</span> ?
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Đóng </button>
-                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Xoá </button>
+                            <button type="submit" className="btn btn-primary" data-bs-dismiss="modal"
+                            onClick={()=>handleDelete(idDelete)} >Xoá </button>
                         </div>
                     </div>
                 </div>
