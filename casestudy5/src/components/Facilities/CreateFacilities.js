@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import {useNavigate} from "react-router";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup"
-import * as serviceFacilities from "../service/ServiceFacilities"
+import * as serviceFacilities from "../../service/ServiceFacilities"
 
 export function CreateFacilities() {
     const navigate = useNavigate()
@@ -15,7 +15,7 @@ export function CreateFacilities() {
                     <Formik
                         initialValues={{
                             title: "",
-                            cost:0,
+                            cost:"",
                             typeRent: "",
                             service: "",
                             img: "",
@@ -26,7 +26,6 @@ export function CreateFacilities() {
                             title:Yup.string().required('bat buoc nhap'),
                             area:Yup.number().required('bat buoc nhap'),
                             cost:Yup.number().required('bat buoc nhap'),
-                            // amount:Yup.number().required('bat buoc nhap'),
                             typeRent:Yup.string().required('bat buoc nhap'),
                             service:Yup.string().required('bat buoc nhap'),
                             img:Yup.string().required('bat buoc nhap')

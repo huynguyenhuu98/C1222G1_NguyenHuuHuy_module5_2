@@ -8,6 +8,14 @@ export const findAll = async() =>{
     }
 }
 
+export const findTypeCustomer = async() =>{
+    try {
+        return (await axios.get(`http://localhost:8080/typeCustomer`)).data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const save = async(customer)=>{
     try {
         await axios.post('http://localhost:8080/customer',customer)
@@ -15,6 +23,7 @@ export const save = async(customer)=>{
 
     }
 }
+
 export const findById = async(id) =>{
     try {
         return (await axios.get(`http://localhost:8080/customer/${id}`)).data
@@ -22,6 +31,7 @@ export const findById = async(id) =>{
         console.log(error)
     }
 }
+
 export const update = async(customer)=>{
     try {
         await axios.put(`http://localhost:8080/customer/${customer.id}`,{ ...facility })

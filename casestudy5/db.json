@@ -6,7 +6,8 @@
       "birth": "20-05-1995",
       "phone": "0835443443",
       "address": "Ngũ Hành Sơn - Đà Nẵng",
-      "email": "nguyena@gmail.com"
+      "email": "nguyena@gmail.com",
+      "typeCustomer": 1
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "birth": "10-05-1990",
       "phone": "0929862826",
       "address": "Quảng Nam",
-      "email": "nguyenthib@gmail.com"
+      "email": "nguyenthib@gmail.com",
+      "typeCustomer": 3
     },
     {
       "id": 3,
@@ -22,7 +24,48 @@
       "birth": "10-05-1990",
       "phone": "0929862826",
       "address": "Quảng Nam",
-      "email": "nguyenthib@gmail.com"
+      "email": "nguyenthib@gmail.com",
+      "typeCustomer": 2
+    },
+    {
+      "name": "phong",
+      "phone": "123",
+      "address": "12",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "2023-06-18",
+      "id": 4,
+      "typeCustomer": 4
+    },
+    {
+      "name": "huynguyen",
+      "typeCustomer": "5",
+      "phone": "123",
+      "address": "123",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "2023-06-04",
+      "id": 5
+    }
+  ],
+  "typeCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
     }
   ],
   "facilities": [
@@ -79,34 +122,11 @@
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
       "area": 1,
       "id": 8
-    },
-    {
-      "name": "asdas",
-      "phone": "123",
-      "address": "123",
-      "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-06-18",
-      "id": 9
-    },
-    {
-      "name": "asd",
-      "phone": "asd",
-      "address": "asd",
-      "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-06-01",
-      "id": 10
-    },
-    {
-      "name": "123",
-      "phone": "123",
-      "address": "123",
-      "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-06-04",
-      "id": 11
     }
   ],
   "contract": [
     {
+      "id": 1,
       "id_contract": "1001",
       "name": "Nguyễn Văn A",
       "start": "20-05-2023",
@@ -115,6 +135,7 @@
       "total": "4000000"
     },
     {
+      "id": 2,
       "id_contract": "1002",
       "name": "Nguyễn Văn B",
       "start": "29-05-2023",
@@ -123,6 +144,7 @@
       "total": "9000000"
     },
     {
+      "id": 3,
       "id_contract": "1003",
       "name": "Nguyễn Văn C",
       "start": "10-05-2023",

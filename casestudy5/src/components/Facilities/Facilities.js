@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import * as serviceFacilities from "../service/ServiceFacilities"
+import * as serviceFacilities from "../../service/ServiceFacilities"
 
 export function Facilities() {
     const [facilities, setFacilities] = useState([]);
@@ -47,7 +47,7 @@ export function Facilities() {
                     <NavLink to="/create" className="bi bi-cart4 text-decoration-none"> Thêm phòng mới
                     </NavLink>
                 </button>
-            <div className="row" style={{marginLeft: '7rem'}}>
+            <div className="row" style={{marginLeft: '50px'}}>
                 {facilities?.map((facility) => (
                         <div className="col-sm-6 col-lg-4 mb-4">
                             <div className="card" style={{width: '23rem'}}>

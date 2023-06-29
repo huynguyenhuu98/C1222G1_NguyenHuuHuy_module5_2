@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/C1222G1_NguyenHuuHuy_module5_2.iml" filepath="$PROJECT_DIR$/../.idea/C1222G1_NguyenHuuHuy_module5_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ss7_redux.iml" filepath="$PROJECT_DIR$/.idea/ss7_redux.iml" />
     </modules>
   </component>

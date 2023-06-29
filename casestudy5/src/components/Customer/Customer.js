@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
-import * as serviceCustomer from "../service/ServiceCustomer"
+import * as serviceCustomer from "../../service/ServiceCustomer"
 
 export function Customer() {
     const [customers,setCustomer] = useState([])
+    const [typeCustomer,setTypeCustomer] = useState([])
     const [idDelete,setIdDelete] = useState()
     const [nameDelete,setNameDelete] = useState("")
     const findCustomer = async ()=>{
         const result = await serviceCustomer.findAll()
         setCustomer(result)
+    }
+    const findTypeCustomer = async ()=>{
+        const result = await serviceCustomer.findTypeCustomer()
+        setTypeCustomer(result)
     }
     const propsDelete = async (id,name)=>{
         setIdDelete(id)
@@ -20,6 +25,7 @@ export function Customer() {
     }
     useEffect(()=>{
         findCustomer()
+        findTypeCustomer()
     },[])
     return (
 
@@ -53,6 +59,7 @@ export function Customer() {
                 <tr>
                     <th>Stt</th>
                     <th>Tên khách hàng</th>
+                    <th>Loại khách hàng</th>
                     <th>Năm sinh</th>
                     <th>Sđt</th>
                     <th>Địa chỉ</th>
@@ -65,6 +72,8 @@ export function Customer() {
                         <tr key={index}>
                             <td>{index+1}</td>
                             <td>{customer.name}</td>
+                            {/*<td>{typeCustomer.find(type=>type.id===customer.typeCustomer)?.name}</td>*/}
+                            <td>{typeCustomer.filter(value=>(value.id===customer.typeCustomer))[0]?.name}</td>
                             <td>{customer.birth}</td>
                             <td>{customer.phone}</td>
                             <td>{customer.address}</td>
