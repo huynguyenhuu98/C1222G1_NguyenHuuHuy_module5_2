@@ -4,11 +4,16 @@ import * as serviceFacilities from "../../service/ServiceFacilities"
 
 export function Facilities() {
     const [facilities, setFacilities] = useState([]);
+    const [typeFacilities, setTypeFacilities] = useState([]);
     const [idDelete, setIdDelete] = useState();
     const [nameDelete, setNameDelete] = useState("");
     const findFacilities = async () => {
         const value = await serviceFacilities.findAll();
         setFacilities(value);
+    }
+    const findTypeFacilities = async () => {
+        const value = await serviceFacilities.findTypeFacilities();
+        setTypeFacilities(value);
     }
     const propsDelete = async (id, name) => {
         setIdDelete(id);
@@ -20,6 +25,7 @@ export function Facilities() {
     }
     useEffect(() => {
         findFacilities();
+        findTypeFacilities();
     },[])
     return (
         <>
@@ -56,8 +62,10 @@ export function Facilities() {
                                      className="card-img-top" alt=""/>
                                 <div className="card-body">
                                     <h5 className="card-title">{facility.title}</h5>
+                                    <p className="card-text">Loại Phòng: {typeFacilities.find(type=>type.id===facility.typeFacilities)?.name} </p>
                                     <p className="card-text">Diện Tích Phòng: {facility.area} m2</p>
-                                    <a href="#" className="btn btn-outline-primary me-2">Sửa</a>
+                                    <NavLink to={`/update-facilities/${facility.id}`} className="text-decoration-none btn btn-outline-primary me-2">Sửa
+                                    </NavLink>
                                     <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal" onClick={()=> propsDelete(facility.id,facility.title)}>
                                         Xóa
@@ -94,7 +102,7 @@ export function Facilities() {
                             <h1 className="modal-title fs-5" id="exampleModalLabel">Xóa dịch vụ</h1>
                         </div>
                         <div className="modal-body">
-                            Bạn muốn xóa {nameDelete} ?
+                            Bạn muốn xóa <span style={{color:'red'}}>{nameDelete}</span>  ?
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button>

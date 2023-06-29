@@ -1,34 +1,45 @@
 import React, {useEffect, useState} from "react";
-import {NavLink} from "react-router-dom";
-import {useNavigate} from "react-router";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
+import * as Yup from "yup";
+import * as serviceFacilities from "../../service/ServiceFacilities";
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import * as Yup from "yup"
-import * as serviceFacilities from "../../service/ServiceFacilities"
 
-export function CreateFacilities() {
+export function UpdateFacilities() {
     const navigate = useNavigate()
+    const param = useParams()
     const [typeFacilities, setTypeFacilities] = useState([]);
-    const findTypeFacilities = async () => {
-        const value = await serviceFacilities.findTypeFacilities();
-        setTypeFacilities(value);
+    const [facilities, setFacilities] = useState();
+    useEffect(() => {
+        const findByIdFacilities = async () => {
+            const res = await serviceFacilities.findById(param.id)
+            setFacilities(res)
+        }
+        findByIdFacilities()
+    }, [param.id])
+
+    useEffect(() => {
+        const findTypeFacilities = async () => {
+            const result = await serviceFacilities.findTypeFacilities()
+            setTypeFacilities(result)
+        }
+        findTypeFacilities()
+    }, [])
+    if (!facilities) {
+        return null
     }
-    useEffect(()=>{
-        findTypeFacilities();
-    },[])
     return (
         <>
-            <h3 className="text-center" style={{marginTop: '8rem', marginBottom: '2rem'}}>Thêm mới phòng</h3>
+            <h3 className="text-center" style={{marginTop: '10rem', marginBottom: '3rem'}}>Sửa thông tin khách hàng</h3>
             <div className="row ms-1 mb-3">
                 <div className="col-5" style={{marginLeft: '2rem'}}>
                     <Formik
                         initialValues={{
-                            title: "",
-                            typeFacilities: 0,
-                            cost:"",
-                            typeRent: "",
-                            service: "",
-                            img: "",
-                            area: ""
+                            title: facilities?.title,
+                            typeFacilities: facilities?.typeFacilities,
+                            cost:facilities?.cost,
+                            typeRent: facilities?.typeRent,
+                            img: facilities?.img,
+                            area: facilities?.area
                         }}
 
                         validationSchema={Yup.object({
@@ -40,12 +51,12 @@ export function CreateFacilities() {
                             img:Yup.string().required('bat buoc nhap')
                         })}
                         onSubmit={(values)=>{
-                            const create = async () => {
+                            const update = async () => {
                                 values.typeFacilities = parseInt(values.typeFacilities)
-                                await serviceFacilities.save(values)
+                                await serviceFacilities.update(param.id,values)
                                 navigate('/')
                             }
-                            create()
+                            update()
                         }}
                     >
                         <Form>
@@ -60,7 +71,7 @@ export function CreateFacilities() {
                                     <option value="0">Select</option>
                                     {typeFacilities.map((type,index)=>(
                                         <option key={index} value={type.id}>
-                                            {type?.name}
+                                            {type.name}
                                         </option>
                                     ))
                                     }
@@ -98,14 +109,12 @@ export function CreateFacilities() {
                             </div>
                         </Form>
                     </Formik>
-
                 </div>
                 <div className="col-6">
-                    <img width="938" height="500"
-                         src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Lagoon-Superior-twin-bed-M-1047x563.jpg"
-                         alt=''/>
+                    <img width="888" height="480"
+                         src="https://media.baodautu.vn/Images/ngoctan/2017/08/29/Furama_Resort_Danang_-_Ocean_Pool_2.JPG"/>
                 </div>
             </div>
         </>
-    );
+    )
 }

@@ -78,7 +78,7 @@ export function Customer() {
                             <td>{customer.phone}</td>
                             <td>{customer.address}</td>
                             <td>{customer.email}</td>
-                            <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
+                            <td><NavLink to={`/update-customer/${customer.id}`} className="text-decoration-none btn btn-primary">Sửa
                             </NavLink></td>
                             <td>
                                 <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"

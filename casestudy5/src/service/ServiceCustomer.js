@@ -32,9 +32,9 @@ export const findById = async(id) =>{
     }
 }
 
-export const update = async(customer)=>{
+export const update = async(id,customer)=>{
     try {
-        await axios.put(`http://localhost:8080/customer/${customer.id}`,{ ...facility })
+        await axios.put(`http://localhost:8080/customer/${id}`,customer)
     } catch (error) {
         console.log(error)
     }

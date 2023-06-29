@@ -1,13 +1,13 @@
 {
   "customer": [
     {
-      "id": 1,
-      "name": "Nguyễn Văn A",
-      "birth": "20-05-1995",
+      "name": "Nguyễn Văn Chuong",
+      "typeCustomer": 1,
       "phone": "0835443443",
       "address": "Ngũ Hành Sơn - Đà Nẵng",
       "email": "nguyena@gmail.com",
-      "typeCustomer": 1
+      "birth": "2023-06-25",
+      "id": 1
     },
     {
       "id": 2,
@@ -37,13 +37,22 @@
       "typeCustomer": 4
     },
     {
-      "name": "huynguyen",
-      "typeCustomer": "5",
+      "name": "123",
+      "typeCustomer": 2,
       "phone": "123",
       "address": "123",
       "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-06-04",
-      "id": 5
+      "birth": "2023-07-01",
+      "id": 6
+    },
+    {
+      "name": "Nguyen Huu",
+      "typeCustomer": 1,
+      "phone": "0919999999",
+      "address": "asd",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "01/01/2020",
+      "id": 7
     }
   ],
   "typeCustomer": [
@@ -74,8 +83,8 @@
       "title": "PHÒNG SUITE HƯỚNG BIỂN",
       "cost": 5000,
       "typeRent": "gio",
-      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg",
+      "typeFacilities": 1,
       "area": "85.8"
     },
     {
@@ -83,45 +92,59 @@
       "title": "PHÒNG STUDIO SUITE HƯỚNG BIỂN",
       "cost": 5000,
       "typeRent": "gio",
-      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
+      "typeFacilities": 1,
       "area": "40.1"
+    },
+    {
+      "id": 3,
+      "title": "PHÒNG DELUXE HƯỚNG BIỂN",
+      "cost": 5000,
+      "typeRent": "gio",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "typeFacilities": 1,
+      "area": "43.7"
     },
     {
       "id": 4,
       "title": "PHÒNG DELUXE HƯỚNG BIỂN",
       "cost": 5000,
       "typeRent": "gio",
-      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "typeFacilities": 3,
       "area": "43.7"
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "PHÒNG DELUXE HƯỚNG BIỂN",
       "cost": 5000,
       "typeRent": "gio",
-      "service": "Room",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
-      "area": "43.7"
-    },
-    {
-      "id": 7,
-      "title": "PHÒNG DELUXE HƯỚNG BIỂN",
-      "cost": 5000,
-      "typeRent": "gio",
-      "service": "Room",
-      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-450x291.jpg",
+      "typeFacilities": 2,
       "area": "43.7"
     },
     {
       "title": "qwe",
       "cost": 0,
       "typeRent": "Tháng",
-      "service": "house",
       "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
       "area": 1,
-      "id": 8
+      "typeFacilities": 1,
+      "id": 6
+    }
+  ],
+  "typeFacilities": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
     }
   ],
   "contract": [
@@ -151,6 +174,15 @@
       "end": "15-05-2023",
       "deposit": "1500000",
       "total": "5000000"
+    },
+    {
+      "id_contract": "123",
+      "name": "123",
+      "start": "123",
+      "end": "123",
+      "deposit": "123",
+      "total": 123,
+      "id": 4
     }
   ]
 }

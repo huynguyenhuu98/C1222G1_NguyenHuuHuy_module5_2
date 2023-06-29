@@ -9,6 +9,8 @@ import {Contract} from "./components/Contract/Contract";
 import {Header} from "./components/Header";
 import {Footer} from "./components/Footer";
 import {CreateContract} from "./components/Contract/CreateContract";
+import {UpdateCustomer} from "./components/Customer/UpdateCustomer";
+import {UpdateFacilities} from "./components/Facilities/UpdateFacilities";
 
 function App() {
     return (
@@ -17,8 +19,10 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<Facilities/>}/>
                 <Route path="/create" element={<CreateFacilities/>}/>
+                <Route path="/update-facilities/:id" element={<UpdateFacilities/>}/>
                 <Route path="/customer" element={<Customer/>}/>
                 <Route path="/create-customer" element={<CreateCustomer/>}/>
+                <Route path="/update-customer/:id" element={<UpdateCustomer/>}/>
                 <Route path="/contract" element={<Contract/>}/>
                 <Route path="/create-contract" element={<CreateContract/>}/>
             </Routes>

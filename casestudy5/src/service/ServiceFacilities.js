@@ -7,6 +7,13 @@ export const findAll = async() =>{
         console.log(error)
     }
 }
+export const findTypeFacilities = async() =>{
+    try {
+        return (await axios.get(`http://localhost:8080/typeFacilities`)).data
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 export const save = async(facility)=>{
     try {
@@ -22,11 +29,9 @@ export const findById = async(id) =>{
         console.log(error)
     }
 }
-export const update = async(facility)=>{
-    console.log("facilityupdate", facility)
+export const update = async(id,facility)=>{
     try {
-        const res = await axios.put(`http://localhost:8080/facilities/${facility.id}`,{ ...facility })
-        console.log("res", res);
+        await axios.put(`http://localhost:8080/facilities/${id}`,facility)
     } catch (error) {
         console.log("errUpdate", error)
     }

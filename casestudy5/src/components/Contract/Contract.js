@@ -68,8 +68,8 @@ export function Contract() {
                             <td>{contract.end}</td>
                             <td>{contract.deposit}</td>
                             <td>{contract.total}</td>
-                            <td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa
-                            </NavLink></td>
+                            {/*<td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa*/}
+                            {/*</NavLink></td>*/}
                             <td>
                                 <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" onClick={()=> propsDelete(contract.id,contract.name)}>

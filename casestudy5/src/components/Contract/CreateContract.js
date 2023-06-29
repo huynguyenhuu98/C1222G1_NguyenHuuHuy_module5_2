@@ -22,12 +22,12 @@ export function CreateContract() {
                         }}
 
                         validationSchema={Yup.object({
-                            id_contract:Yup.string().required('bat buoc nhap'),
-                            name:Yup.string().required('bat buoc nhap'),
-                            start:Yup.string().required('bat buoc nhap'),
-                            end:Yup.string().required('bat buoc nhap'),
-                            deposit:Yup.string().required('bat buoc nhap'),
-                            total:Yup.string().required('bat buoc nhap')
+                            id_contract:Yup.string().required('Bắt buộc nhập'),
+                            name:Yup.string().required('Bắt buộc nhập'),
+                            start:Yup.string().required('Bắt buộc nhập'),
+                            end:Yup.string().required('Bắt buộc nhập'),
+                            deposit:Yup.string().required('Bắt buộc nhập').min(0),
+                            total:Yup.string().required('Bắt buộc nhập')
                         })}
                         onSubmit={(values)=>{
                             const create = async () => {

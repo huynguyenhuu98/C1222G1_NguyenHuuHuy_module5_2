@@ -1,33 +1,45 @@
 import React, {useEffect, useState} from "react";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useNavigate, useParams} from "react-router-dom";
 import * as Yup from "yup";
 import * as serviceCustomer from "../../service/ServiceCustomer";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 
-export function CreateCustomer() {
+export function UpdateCustomer() {
     const navigate = useNavigate()
-    const [typeCustomer,setTypeCustomer] = useState([])
-    useEffect(()=>{
-        const findTypeCustomer = async ()=>{
+    const param = useParams()
+    const [typeCustomer, setTypeCustomer] = useState([])
+    const [customer, setCustomer] = useState()
+    useEffect(() => {
+        const findByIdCustomer = async () => {
+            const res = await serviceCustomer.findById(param.id)
+            setCustomer(res)
+        }
+        findByIdCustomer()
+    }, [param.id])
+
+    useEffect(() => {
+        const findTypeCustomer = async () => {
             const result = await serviceCustomer.findTypeCustomer()
             setTypeCustomer(result)
         }
         findTypeCustomer()
-    },[])
-
+    }, [])
+    if (!customer) {
+        return null
+    }
     return (
         <>
-            <h3 className="text-center" style={{marginTop: '10rem', marginBottom:'3rem'}}>Sửa thông tin khách hàng</h3>
+            <h3 className="text-center" style={{marginTop: '10rem', marginBottom: '3rem'}}>Sửa thông tin khách hàng</h3>
             <div className="row ms-1 mb-3">
                 <div className="col-5" style={{marginLeft: '2rem'}}>
                     <Formik
                         initialValues={{
-                            name: "",
-                            typeCustomer:0,
-                            phone:"",
-                            address: "",
-                            email: "",
-                            birth: ""
+                            name: customer?.name,
+                            typeCustomer: customer?.typeCustomer,
+                            phone: customer?.phone,
+                            address: customer?.address,
+                            email: customer?.email,
+                            birth: customer?.birth
                         }}
 
                         validationSchema={Yup.object({
@@ -38,13 +50,13 @@ export function CreateCustomer() {
                             email:Yup.string().required('Bắt buộc nhập').email('Email phải có định dạng xxxx@yyyy.com'),
                             birth:Yup.string().required('Bắt buộc nhập').matches(/^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/, 'Định dạng ngày tháng không hợp lệ (dd/mm/yyyy)'),
                         })}
-                        onSubmit={(values)=>{
-                            const create = async () => {
+                        onSubmit={(values) => {
+                            const update = async () => {
                                 values.typeCustomer = parseInt(values.typeCustomer);
-                                await serviceCustomer.save(values)
+                                await serviceCustomer.update(param.id, values)
                                 navigate('/customer')
                             }
-                            create()
+                            update()
                         }}
                     >
                         <Form>
@@ -57,12 +69,12 @@ export function CreateCustomer() {
                                 <label htmlFor="example7">Loại khách hàng </label>
                                 <Field as="select" className="form-control" id="example7" name="typeCustomer">
                                     <option value="0">Chọn</option>
-                                    {typeCustomer.map((type,index)=>(
+                                    {typeCustomer.map((type, index) => (
                                         <option key={index} value={type.id}>
                                             {type.name}
                                         </option>
                                     ))
-                                }
+                                    }
                                 </Field>
                                 <ErrorMessage name="typeCustomer" component="span" className="err-class"/>
                             </div>

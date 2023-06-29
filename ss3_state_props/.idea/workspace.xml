@@ -2,23 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c601eab2-343d-46fb-ba20-3b72024ad118" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/C1222G1_NguyenHuuHuy_module5_2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../casestudy5/src/components/Contract/CreateContract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../casestudy5/src/service/ServiceContract.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_nextjs_app/.idea/ss8_nextjs_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_nextjs_app/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_nextjs_app/pages/CreatePost.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss8_nextjs_app/pages/ListPost.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy5/src/components/Customer/UpdateCustomer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/UpdateFacilities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy5/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy5/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Contract.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Contract/Contract.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/CreateCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Customer/CreateCustomer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/CreateFacilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/CreateFacilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Customer/Customer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/Facilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Contract/CreateContract.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Contract/CreateContract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Customer/CreateCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Customer/CreateCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Customer/Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Customer/Customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/CreateFacilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/CreateFacilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/Facilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/components/Facilities/Facilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/service/ServiceCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/service/ServiceCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy5/src/service/ServiceFacilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy5/src/service/ServiceFacilities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7_redux/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7_redux/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss7_redux/.idea/ss7_redux.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ss7_redux/.idea/ss7_redux.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +100,7 @@
       <workItem from="1687824000535" duration="846000" />
       <workItem from="1687859977152" duration="833000" />
       <workItem from="1688008047762" duration="6173000" />
+      <workItem from="1688053590405" duration="3255000" />
     </task>
     <servers />
   </component>
