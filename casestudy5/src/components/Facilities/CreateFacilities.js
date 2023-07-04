@@ -4,6 +4,7 @@ import {useNavigate} from "react-router";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup"
 import * as serviceFacilities from "../../service/ServiceFacilities"
+import {toast} from "react-toastify";
 
 export function CreateFacilities() {
     const navigate = useNavigate()
@@ -43,6 +44,7 @@ export function CreateFacilities() {
                             const create = async () => {
                                 values.typeFacilities = parseInt(values.typeFacilities)
                                 await serviceFacilities.save(values)
+                                toast(' Thêm mới dịch vụ thành công ')
                                 navigate('/')
                             }
                             create()

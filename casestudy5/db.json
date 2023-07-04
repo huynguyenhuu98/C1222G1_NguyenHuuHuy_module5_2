@@ -28,31 +28,22 @@
       "typeCustomer": 2
     },
     {
-      "name": "phong",
-      "phone": "123",
-      "address": "12",
-      "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-06-18",
-      "id": 4,
-      "typeCustomer": 4
-    },
-    {
-      "name": "123",
-      "typeCustomer": 2,
-      "phone": "123",
-      "address": "123",
-      "email": "nguyenhuuhuy1998@gmail.com",
-      "birth": "2023-07-01",
-      "id": 6
-    },
-    {
-      "name": "Nguyen Huu",
-      "typeCustomer": 1,
+      "name": "Nguyen Huu Huy",
+      "typeCustomer": 3,
       "phone": "0919999999",
       "address": "asd",
       "email": "nguyenhuuhuy1998@gmail.com",
       "birth": "01/01/2020",
-      "id": 7
+      "id": 8
+    },
+    {
+      "name": "Nguyen Huu A",
+      "typeCustomer": 3,
+      "phone": "0919090990",
+      "address": "123",
+      "email": "nguyenhuuhuy1998@gmail.com",
+      "birth": "01/01/2020",
+      "id": 9
     }
   ],
   "typeCustomer": [
@@ -131,6 +122,16 @@
       "area": 1,
       "typeFacilities": 1,
       "id": 6
+    },
+    {
+      "title": "phong vip",
+      "typeFacilities": 3,
+      "cost": 100,
+      "typeRent": "Ngày",
+      "service": "",
+      "img": "https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Studio-Suite-F-370x239.jpg",
+      "area": 100,
+      "id": 8
     }
   ],
   "typeFacilities": [

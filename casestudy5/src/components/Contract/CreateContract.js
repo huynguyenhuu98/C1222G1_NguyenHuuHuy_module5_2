@@ -3,6 +3,7 @@ import {NavLink, useNavigate} from "react-router-dom";
 import * as Yup from "yup";
 import * as serviceContract from "../../service/ServiceContract";
 import {ErrorMessage, Field, Form, Formik} from "formik";
+import {toast} from "react-toastify";
 
 export function CreateContract() {
     const navigate = useNavigate()
@@ -32,6 +33,7 @@ export function CreateContract() {
                         onSubmit={(values)=>{
                             const create = async () => {
                                 await serviceContract.save(values)
+                                toast(' Thêm mới hợp đồng thành công ')
                                 navigate('/contract')
                             }
                             create()
@@ -69,7 +71,14 @@ export function CreateContract() {
                                 <ErrorMessage name="total" component="span" className="err-class"/>
                             </div>
                             <div className="d-flex justify-content-center mt-3">
-                                <NavLink to="/" className="btn btn-outline-success me-2">Home</NavLink>
+                                <NavLink to="/contract" className="btn btn-outline-success me-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                         className="bi bi-card-list" viewBox="0 0 16 16">
+                                        <path
+                                            d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                        <path
+                                            d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                    </svg> Trở lại</NavLink>
                                 <button type="submit" className="btn btn-outline-primary">Xác nhận</button>
                             </div>
                         </Form>

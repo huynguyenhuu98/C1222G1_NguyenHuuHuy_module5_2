@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import * as serviceContract from "../../service/ServiceContract";
 import {NavLink} from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Contract() {
     const [contracts,setContract] = useState([])
@@ -17,10 +19,31 @@ export function Contract() {
     const handleDelete = async (id) =>{
         await serviceContract.remove(id)
         findContract()
+        toast('Xoá thành công')
     }
     useEffect(()=>{
         findContract()
     },[])
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 3;
+
+    // Tính toán số trang
+    const totalPages = Math.ceil(contracts.length / itemsPerPage);
+
+    // Lấy danh sách hiển thị cho trang hiện tại
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = contracts.slice(indexOfFirstItem, indexOfLastItem);
+    const nextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
     return (
         <>
             <div className='vc_custom '
@@ -45,8 +68,8 @@ export function Contract() {
                     DANH SÁCH HỢP ĐỒNG</h2>
                 <div style={{height: '102px'}}></div>
             </div>
-            <NavLink to="/create-contract" className="bi bi-cart4 text-decoration-none"> Thêm hợp đồng mới
-            </NavLink>
+            <button className="btn btn-outline-info"><NavLink to="/create-contract" className="bi bi-cart4 text-decoration-none"> Thêm hợp đồng mới
+            </NavLink></button>
             <table className="table table-striped table-inverse table-responsive me-2">
                 <thead className="thead-inverse">
                 <tr>
@@ -60,7 +83,7 @@ export function Contract() {
                 </thead>
                 <tbody>
                 {
-                    contracts.map((contract,index)=>(
+                    currentItems.map((contract,index)=>(
                         <tr key={index}>
                             <td>{contract.id_contract}</td>
                             <td>{contract.name}</td>
@@ -68,7 +91,7 @@ export function Contract() {
                             <td>{contract.end}</td>
                             <td>{contract.deposit}</td>
                             <td>{contract.total}</td>
-                            {/*<td><NavLink to="/update_customer" className="text-decoration-none btn btn-primary">Sửa*/}
+                            {/*<td><NavLink to="/update_contract" className="text-decoration-none btn btn-primary">Sửa*/}
                             {/*</NavLink></td>*/}
                             <td>
                                 <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"
@@ -81,6 +104,23 @@ export function Contract() {
                 }
                 </tbody>
             </table>
+            <nav aria-label="Page navigation example">
+                <ul className="pagination justify-content-center mt-3">
+                    <li className="page-item">
+                        <a className="page-link" onClick={prevPage} disabled={currentPage === 1} aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    {/*<li className="page-item"><a className="page-link" href="#">1</a></li>*/}
+                    {/*<li className="page-item"><a className="page-link" href="#">2</a></li>*/}
+                    {/*<li className="page-item"><a className="page-link" href="#">3</a></li>*/}
+                    <li className="page-item">
+                        <a className="page-link" onClick={nextPage} disabled={currentPage === totalPages} aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                  aria-hidden="true">
                 <div className="modal-dialog">
@@ -99,6 +139,7 @@ export function Contract() {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     )
 }
